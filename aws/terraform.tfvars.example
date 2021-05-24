@@ -1,0 +1,4 @@
+aws_region = "us-east-1"
+aws_availability_zone = "us-east-1a"
+aws_access_key = "INSERT YOUR ACCESS KEY HERE"
+aws_secret_key = "INSERT YOU SECRET KEY HERE"

@@ -1,0 +1,32 @@
+version: "3.8"
+
+services: 
+
+    opencart:
+        build: ./opencart
+        image: opencart:0.1
+        container_name: opencart
+        ports: 
+            - 80:80
+        depends_on: 
+            - mysql
+        tty: true
+        links: 
+            - "mysql:database"
+
+    mysql:
+        build: 
+            context: ./mysql
+            args: 
+                MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+                MYSQL_DATABASE: ${MYSQL_DATABASE}
+                MYSQL_USER: ${MYSQL_USER}
+                MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        image: mymysql:0.1
+        container_name: mysql
+        working_dir: /root
+        volumes: 
+            - ./db_data/root
+        tty: true
+        ports: 
+            - "3306:3306"
