@@ -1,7 +1,7 @@
 # Ignore .env file with sensitive data for docker compose
 .env
 
-# Ignore destructor script destructor script since it creates dynamically
+# Ignore destructor script since it creates dynamically
 aws/destructor.sh
 
 # Local .terraform directories
